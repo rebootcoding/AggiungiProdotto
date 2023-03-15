@@ -33,6 +33,10 @@ namespace AggiungiProdotto
                 cbx_categoria.DisplayMember = "category_name";
                 cbx_categoria.DataSource = rowsCategory;
 
+                //var rows = db.GetCustomers().DefaultView;
+                //cbx_customers.DisplayMember = "Nome Completo";
+                //cbx_customers.DataSource = rows;
+
             }
         }
 
@@ -50,7 +54,7 @@ namespace AggiungiProdotto
             var nome = tbx_nome.Text;
             var selBrand = cbx_brand.SelectedItem as DataRowView;
             var brand_id = $"{selBrand["brand_id"]}";
-            var selCat = cbx_categoria.SelectedItem as DataRow;
+            var selCat = cbx_categoria.SelectedItem as DataRowView;
             var category_id = $"{selCat["category_id"]}";
             var model_year = tbx_anno.Text;
             var list_price = tbx_prezzo.Text;

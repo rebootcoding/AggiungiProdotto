@@ -102,7 +102,7 @@ namespace AggiungiProdotto
             using (var conn = GetConnection())
             {
                 var command = new SqlCommand();
-                command.CommandText = $"SELECT b.brand_name "+"FROM production.brands b "+"ORDER BY b.brand_name";
+                command.CommandText = $"SELECT b.brand_name, b.brand_id "+"FROM production.brands b "+"ORDER BY b.brand_name";
                 command.Connection = conn;
 
                 try
@@ -125,7 +125,7 @@ namespace AggiungiProdotto
             using (var conn = GetConnection())
             {
                 var command = new SqlCommand();
-                command.CommandText = $"SELECT b.category_name " + "FROM production.categories b " + "ORDER BY b.category_name";
+                command.CommandText = $"SELECT b.category_name, category_id " + "FROM production.categories b " + "ORDER BY b.category_name";
                 command.Connection = conn;
 
                 try
