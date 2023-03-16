@@ -58,13 +58,15 @@ namespace AggiungiProdotto
             var category_id = $"{selCat["category_id"]}";
             var model_year = tbx_anno.Text;
             var list_price = tbx_prezzo.Text;
-            db.InsertNewProduct(nome.ToString(), int.Parse(brand_id), int.Parse(category_id), int.Parse(model_year), decimal.Parse(list_price));
-
-            //var selItem = cbx_customers.SelectedItem as DataRowView;
-
-            //var id_customer = $"{selItem["customer_id"]}";
-            //var table = db.GetAllOrdersByCustomer(id_customer);
-            //dataGridView1.DataSource = table;
+            try
+            {
+                db.InsertNewProduct(nome.ToString(), int.Parse(brand_id), int.Parse(category_id), int.Parse(model_year), decimal.Parse(list_price));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
         }
     }
 }

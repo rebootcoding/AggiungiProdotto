@@ -86,7 +86,7 @@ namespace AggiungiProdotto
                 try
                 {
                     conn.Open();
-                    var writer = command.ExecuteNonQuery();
+                    command.ExecuteNonQuery();
                     MessageBox.Show("Hai inserito un nuovo prodotto!");
 
                 }
